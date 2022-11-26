@@ -126,6 +126,7 @@ export const tokens = (mode) => ({
 
 export const themeSettings = (mode) => {
   const colors = tokens(mode);
+
   return {
     palette: {
       mode: mode,
@@ -163,7 +164,6 @@ export const themeSettings = (mode) => {
             },
           }),
     },
-
     typography: {
       fontFamily: ['Source Sans pro', 'sans-serif'].join(','),
       fontSize: 12,
@@ -202,13 +202,12 @@ export const ColorModeContext = createContext({
 export const useMode = () => {
   const [mode, setMode] = useState('dark');
 
-  const colorMode = useMemo(
-    () => ({
+  const colorMode = useMemo(() => {
+    return {
       toggleColorMode: () =>
         setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
-    }),
-    []
-  );
+    };
+  }, []);
 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
