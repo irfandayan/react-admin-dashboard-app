@@ -123,7 +123,7 @@ export const tokens = (mode) => ({
         },
       }),
 });
-
+// Define theme for MUI components so the theme settings get override the default MUI components styling
 export const themeSettings = (mode) => {
   const colors = tokens(mode);
 

@@ -4,12 +4,14 @@ import { useContext } from 'react';
 import { ColorModeContext, tokens } from '../../theme';
 import InputBase from '@mui/material/InputBase';
 
-import LightModeOutlined from '@mui/icons-material/LightModeOutlined';
-import DarkModeOutlined from '@mui/icons-material/DarkModeOutlined';
-import NotificationsOutlined from '@mui/icons-material/NotificationsOutlined';
-import SettingsOutlined from '@mui/icons-material/SettingsOutlined';
-import PersonOutlineOutlined from '@mui/icons-material/PersonOutlineOutlined';
-import Search from '@mui/icons-material/Search';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+
+
 
 const Topbar = () => {
   const theme = useTheme();
@@ -27,26 +29,26 @@ const Topbar = () => {
       >
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
         <IconButton type="button" sx={{ p: 1 }}>
-          <Search />
+          <SearchIcon />
         </IconButton>
       </Box>
       {/* ICONS */}
       <Box display="flex">
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === 'dark' ? (
-            <DarkModeOutlined />
+            <DarkModeOutlinedIcon />
           ) : (
-            <LightModeOutlined />
+            <LightModeOutlinedIcon />
           )}
         </IconButton>
         <IconButton>
-          <NotificationsOutlined />
+          <NotificationsOutlinedIcon />
         </IconButton>
         <IconButton>
-          <SettingsOutlined />
+          <SettingsOutlinedIcon />
         </IconButton>
         <IconButton>
-          <PersonOutlineOutlined />
+          <PersonOutlineOutlinedIcon />
         </IconButton>
       </Box>
     </Box>
